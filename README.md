@@ -23,12 +23,26 @@ gwt-clone <repo_url> [main_branch]
 
 ### gwt-add 
 ```shell
-gwt-add <repo_dir> <branch_name> [commit_sha]
+gwt-add <repo_dir> <branch_name> [base_branch_or_commit_sha]
 ```
 
 + `<repo_dir>`: The directory where the repository was cloned using gwt-clone.
 + `<branch_name>`: The name of the branch to add as a worktree.
-+ `[commit_sha]` (optional): The specific commit from which to create the branch. If not specified, the branch will be added from the latest state.
++ `[base_branch_or_commit_sha]` (optional): The base branch or commit SHA to create the new branch from. If not specified, the branch will be created from the latest commit of the default branch.
+
+#### Examples
+1. Create a new branch from the latest commit of the default branch: 
+```shell
+gwt-add repo.worktrees new-feature
+```
+2. Create a new branch from another existing branch:
+```shell
+gwt-add repo.worktrees new-feature development
+```
+3. Create a new branch from a specific historical commit:
+```shell
+gwt-add repo.worktrees bugfix abc1234
+```
 
 ## Workings
 ### gwt-clone
