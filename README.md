@@ -13,8 +13,9 @@ sudo ln -s /path/to/gwt/gwt-clone.sh /usr/local/bin/gwt-clone
 sudo ln -s /path/to/gwt/gwt-add.sh /usr/local/bin/gwt-add
 ```
 
-## Usage
-### gwt-clone
+## Usage
+### gwt-clone
+
 ```shell
 gwt-clone <repo_url> [main_branch]
 ```
@@ -30,7 +31,7 @@ gwt-add <repo_dir> <branch_name> [base_branch_or_commit_sha]
 + `<branch_name>`: The name of the branch to add as a worktree.
 + `[base_branch_or_commit_sha]` (optional): The base branch or commit SHA to create the new branch from. If not specified, the branch will be created from the latest commit of the default branch.
 
-#### Examples
+#### Examples
 1. Create a new branch from the latest commit of the default branch: 
 ```shell
 gwt-add repo.worktrees new-feature
@@ -78,7 +79,7 @@ The folder structure after adding branches will be:
 + Git must be installed and available in the system's PATH.
 + Bash shell.
 
-# Error Handling
+# Error Handling
 The script uses set `-euo pipefail` to ensure it exits on errors, undefined variables, or pipeline failures.
 
 + If no arguments are supplied, it prints an error message and usage instructions.
