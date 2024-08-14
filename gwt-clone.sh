@@ -20,7 +20,7 @@ echo "REPO_URL: $REPO_URL in $BASE_DIR, MAIN_BRANCH: $MAIN_BRANCH"
 git clone --bare $REPO_URL $BASE_DIR/.bare
 
 # Step 2: Create and add the main worktree
-mkdir -p $BASE_DIR/main
+mkdir -p $BASE_DIR/$MAIN_BRANCH
 
 cd $BASE_DIR
-git --git-dir=.bare worktree add main $MAIN_BRANCH
+git --git-dir=.bare worktree add $MAIN_BRANCH $MAIN_BRANCH
